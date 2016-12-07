@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="hospitalManagementApp.appointment.home.title">Appointments</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="appointment.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="hospitalManagementApp.appointment.home.createLabel">
+                        Create new Appointment
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="date"><span data-translate="hospitalManagementApp.appointment.date">Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="patient.name"><span data-translate="hospitalManagementApp.appointment.patient">Patient</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="doctor.name"><span data-translate="hospitalManagementApp.appointment.doctor">Doctor</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="appointment in vm.appointments track by appointment.id">
+                    <td><a ui-sref="appointment-detail({id:appointment.id})">{{appointment.id}}</a></td>
+                    <td>{{appointment.date | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="patient-detail({id:appointment.patient.id})">{{appointment.patient.name}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="doctor-detail({id:appointment.doctor.id})">{{appointment.doctor.name}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="appointment-detail({id:appointment.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="appointment.edit({id:appointment.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="appointment.delete({id:appointment.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>
