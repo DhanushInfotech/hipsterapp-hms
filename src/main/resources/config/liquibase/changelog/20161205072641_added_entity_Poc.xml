@@ -49,10 +49,18 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="name_id" type="bigint">
+            <column name="diagnosis" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-
+            
+            <column name="investigation" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="patientname" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
         

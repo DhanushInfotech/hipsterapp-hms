@@ -4,7 +4,7 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myPocLabel" data-translate="hospitalManagementApp.poc.home.createOrEditLabel">Create or edit a Poc</h4>
+        <h4 class="modal-title" id="myPocLabel" >Create or edit a Poc</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
@@ -14,55 +14,67 @@
                     ng-model="vm.poc.id" readonly />
         </div>
          <div class="form-group">
-            <label data-translate="hospitalManagementApp.poc.name" for="field_name">Name</label>
-            <select class="form-control" id="field_name" name="name" ng-model="vm.poc.name" ng-options="patient as patient.name for patient in vm.patients track by patient.id">
-                <option value=""></option>
-            </select>
+            <label class="control-label"  for="field_patientname">Patientname</label>
+            <input type="text" class="form-control" name="patientname" id="field_patientname"
+                    ng-model="vm.poc.patientname"
+                     />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="hospitalManagementApp.poc.chiefcomplaint" for="field_chiefcomplaint">Chiefcomplaint</label>
+            <label class="control-label"  for="field_chiefcomplaint">Chiefcomplaint</label>
             <input type="text" class="form-control" name="chiefcomplaint" id="field_chiefcomplaint"
                     ng-model="vm.poc.chiefcomplaint"
                      />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="hospitalManagementApp.poc.bp" for="field_bp">Bp</label>
+            <label class="control-label"  for="field_bp">Bp</label>
             <input type="number" class="form-control" name="bp" id="field_bp"
                     ng-model="vm.poc.bp"
                      />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="hospitalManagementApp.poc.pulse" for="field_pulse">Pulse</label>
+            <label class="control-label"  for="field_pulse">Pulse</label>
             <input type="number" class="form-control" name="pulse" id="field_pulse"
                     ng-model="vm.poc.pulse"
                      />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="hospitalManagementApp.poc.temperature" for="field_temperature">Temperature</label>
+            <label class="control-label"  for="field_temperature">Temperature</label>
             <input type="number" class="form-control" name="temperature" id="field_temperature"
                     ng-model="vm.poc.temperature"
                      />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="hospitalManagementApp.poc.weight" for="field_weight">Weight</label>
+            <label class="control-label"  for="field_weight">Weight</label>
             <input type="number" class="form-control" name="weight" id="field_weight"
                     ng-model="vm.poc.weight"
                      />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="hospitalManagementApp.poc.drugs" for="field_drugs">Drugs</label>
+            <label class="control-label"  for="field_drugs">Drugs</label>
             <input type="text" class="form-control" name="drugs" id="field_drugs"
                     ng-model="vm.poc.drugs"
                      />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="hospitalManagementApp.poc.docnote" for="field_docnote">Docnote</label>
+            <label class="control-label"  for="field_docnote">Docnote</label>
             <input type="text" class="form-control" name="docnote" id="field_docnote"
                     ng-model="vm.poc.docnote"
                      />
         </div>
-
+        <div class="form-group">
+            <label class="control-label"  for="field_diagnosis">Diagnosis</label>
+            <input type="text" class="form-control" name="diagnosis" id="field_diagnosis"
+                    ng-model="vm.poc.diagnosis"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label"  for="field_investigation">Investigation</label>
+            <input type="text" class="form-control" name="investigation" id="field_investigation"
+                    ng-model="vm.poc.investigation"
+                     />
+        </div>
        
+
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

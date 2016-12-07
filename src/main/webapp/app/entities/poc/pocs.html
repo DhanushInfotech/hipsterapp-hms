@@ -3,14 +3,14 @@
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-4 no-padding-left">
+            <!-- <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="poc.new" >
                     <span class="glyphicon glyphicon-plus"></span>
                     <span  data-translate="hospitalManagementApp.poc.home.createLabel">
                         Create new Poc
                     </span>
                 </button>
-            </div>
+            </div> -->
         </div>
     </div>
     <br/>
@@ -19,7 +19,6 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="name.name"><span data-translate="hospitalManagementApp.poc.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="chiefcomplaint"><span data-translate="hospitalManagementApp.poc.chiefcomplaint">Chiefcomplaint</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="bp"><span data-translate="hospitalManagementApp.poc.bp">Bp</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="pulse"><span data-translate="hospitalManagementApp.poc.pulse">Pulse</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -27,16 +26,15 @@
                     <th jh-sort-by="weight"><span data-translate="hospitalManagementApp.poc.weight">Weight</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="drugs"><span data-translate="hospitalManagementApp.poc.drugs">Drugs</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="docnote"><span data-translate="hospitalManagementApp.poc.docnote">Docnote</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    
+                    <th jh-sort-by="diagnosis"><span data-translate="hospitalManagementApp.poc.diagnosis">Diagnosis</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="investigation"><span data-translate="hospitalManagementApp.poc.investigation">Investigation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="patientname"><span data-translate="hospitalManagementApp.poc.patientname">Patientname</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="poc in vm.pocs track by poc.id">
                     <td><a ui-sref="poc-detail({id:poc.id})">{{poc.id}}</a></td>
-                    <td>
-                        <a ui-sref="patient-detail({id:poc.name.id})">{{poc.name.name}}</a>
-                    </td>
                     <td>{{poc.chiefcomplaint}}</td>
                     <td>{{poc.bp}}</td>
                     <td>{{poc.pulse}}</td>
@@ -44,7 +42,9 @@
                     <td>{{poc.weight}}</td>
                     <td>{{poc.drugs}}</td>
                     <td>{{poc.docnote}}</td>
-                    
+                    <td>{{poc.diagnosis}}</td>
+                    <td>{{poc.investigation}}</td>
+                    <td>{{poc.patientname}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

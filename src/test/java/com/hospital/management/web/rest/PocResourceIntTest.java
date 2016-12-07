@@ -59,6 +59,15 @@ public class PocResourceIntTest {
     private static final String DEFAULT_DOCNOTE = "AAAAAAAAAA";
     private static final String UPDATED_DOCNOTE = "BBBBBBBBBB";
 
+    private static final String DEFAULT_DIAGNOSIS = "AAAAAAAAAA";
+    private static final String UPDATED_DIAGNOSIS = "BBBBBBBBBB";
+
+    private static final String DEFAULT_INVESTIGATION = "AAAAAAAAAA";
+    private static final String UPDATED_INVESTIGATION = "BBBBBBBBBB";
+
+    private static final String DEFAULT_PATIENTNAME = "AAAAAAAAAA";
+    private static final String UPDATED_PATIENTNAME = "BBBBBBBBBB";
+
     @Inject
     private PocRepository pocRepository;
 
@@ -102,7 +111,10 @@ public class PocResourceIntTest {
                 .temperature(DEFAULT_TEMPERATURE)
                 .weight(DEFAULT_WEIGHT)
                 .drugs(DEFAULT_DRUGS)
-                .docnote(DEFAULT_DOCNOTE);
+                .docnote(DEFAULT_DOCNOTE)
+                .diagnosis(DEFAULT_DIAGNOSIS)
+                .investigation(DEFAULT_INVESTIGATION)
+                .patientname(DEFAULT_PATIENTNAME);
         return poc;
     }
 
@@ -134,6 +146,9 @@ public class PocResourceIntTest {
         assertThat(testPoc.getWeight()).isEqualTo(DEFAULT_WEIGHT);
         assertThat(testPoc.getDrugs()).isEqualTo(DEFAULT_DRUGS);
         assertThat(testPoc.getDocnote()).isEqualTo(DEFAULT_DOCNOTE);
+        assertThat(testPoc.getDiagnosis()).isEqualTo(DEFAULT_DIAGNOSIS);
+        assertThat(testPoc.getInvestigation()).isEqualTo(DEFAULT_INVESTIGATION);
+        assertThat(testPoc.getPatientname()).isEqualTo(DEFAULT_PATIENTNAME);
     }
 
     @Test
@@ -153,7 +168,10 @@ public class PocResourceIntTest {
                 .andExpect(jsonPath("$.[*].temperature").value(hasItem(DEFAULT_TEMPERATURE.intValue())))
                 .andExpect(jsonPath("$.[*].weight").value(hasItem(DEFAULT_WEIGHT.intValue())))
                 .andExpect(jsonPath("$.[*].drugs").value(hasItem(DEFAULT_DRUGS.toString())))
-                .andExpect(jsonPath("$.[*].docnote").value(hasItem(DEFAULT_DOCNOTE.toString())));
+                .andExpect(jsonPath("$.[*].docnote").value(hasItem(DEFAULT_DOCNOTE.toString())))
+                .andExpect(jsonPath("$.[*].diagnosis").value(hasItem(DEFAULT_DIAGNOSIS.toString())))
+                .andExpect(jsonPath("$.[*].investigation").value(hasItem(DEFAULT_INVESTIGATION.toString())))
+                .andExpect(jsonPath("$.[*].patientname").value(hasItem(DEFAULT_PATIENTNAME.toString())));
     }
 
     @Test
@@ -173,7 +191,10 @@ public class PocResourceIntTest {
             .andExpect(jsonPath("$.temperature").value(DEFAULT_TEMPERATURE.intValue()))
             .andExpect(jsonPath("$.weight").value(DEFAULT_WEIGHT.intValue()))
             .andExpect(jsonPath("$.drugs").value(DEFAULT_DRUGS.toString()))
-            .andExpect(jsonPath("$.docnote").value(DEFAULT_DOCNOTE.toString()));
+            .andExpect(jsonPath("$.docnote").value(DEFAULT_DOCNOTE.toString()))
+            .andExpect(jsonPath("$.diagnosis").value(DEFAULT_DIAGNOSIS.toString()))
+            .andExpect(jsonPath("$.investigation").value(DEFAULT_INVESTIGATION.toString()))
+            .andExpect(jsonPath("$.patientname").value(DEFAULT_PATIENTNAME.toString()));
     }
 
     @Test
@@ -201,7 +222,10 @@ public class PocResourceIntTest {
                 .temperature(UPDATED_TEMPERATURE)
                 .weight(UPDATED_WEIGHT)
                 .drugs(UPDATED_DRUGS)
-                .docnote(UPDATED_DOCNOTE);
+                .docnote(UPDATED_DOCNOTE)
+                .diagnosis(UPDATED_DIAGNOSIS)
+                .investigation(UPDATED_INVESTIGATION)
+                .patientname(UPDATED_PATIENTNAME);
 
         restPocMockMvc.perform(put("/api/pocs")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -219,6 +243,9 @@ public class PocResourceIntTest {
         assertThat(testPoc.getWeight()).isEqualTo(UPDATED_WEIGHT);
         assertThat(testPoc.getDrugs()).isEqualTo(UPDATED_DRUGS);
         assertThat(testPoc.getDocnote()).isEqualTo(UPDATED_DOCNOTE);
+        assertThat(testPoc.getDiagnosis()).isEqualTo(UPDATED_DIAGNOSIS);
+        assertThat(testPoc.getInvestigation()).isEqualTo(UPDATED_INVESTIGATION);
+        assertThat(testPoc.getPatientname()).isEqualTo(UPDATED_PATIENTNAME);
     }
 
     @Test

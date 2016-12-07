@@ -42,8 +42,14 @@ public class Poc implements Serializable {
     @Column(name = "docnote")
     private String docnote;
 
-    @ManyToOne
-    private Patient name;
+    @Column(name = "diagnosis")
+    private String diagnosis;
+
+    @Column(name = "investigation")
+    private String investigation;
+
+    @Column(name = "patientname")
+    private String patientname;
 
     public Long getId() {
         return id;
@@ -144,17 +150,43 @@ public class Poc implements Serializable {
         this.docnote = docnote;
     }
 
-    public Patient getName() {
-        return name;
+    public String getDiagnosis() {
+        return diagnosis;
     }
 
-    public Poc name(Patient patient) {
-        this.name = patient;
+    public Poc diagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
         return this;
     }
 
-    public void setName(Patient patient) {
-        this.name = patient;
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
+    }
+
+    public String getInvestigation() {
+        return investigation;
+    }
+
+    public Poc investigation(String investigation) {
+        this.investigation = investigation;
+        return this;
+    }
+
+    public void setInvestigation(String investigation) {
+        this.investigation = investigation;
+    }
+
+    public String getPatientname() {
+        return patientname;
+    }
+
+    public Poc patientname(String patientname) {
+        this.patientname = patientname;
+        return this;
+    }
+
+    public void setPatientname(String patientname) {
+        this.patientname = patientname;
     }
 
     @Override
@@ -188,6 +220,9 @@ public class Poc implements Serializable {
             ", weight='" + weight + "'" +
             ", drugs='" + drugs + "'" +
             ", docnote='" + docnote + "'" +
+            ", diagnosis='" + diagnosis + "'" +
+            ", investigation='" + investigation + "'" +
+            ", patientname='" + patientname + "'" +
             '}';
     }
 }

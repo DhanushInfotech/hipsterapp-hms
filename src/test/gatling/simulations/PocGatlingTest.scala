@@ -67,7 +67,7 @@ class PocGatlingTest extends Simulation {
             .exec(http("Create new poc")
             .post("/api/pocs")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "chiefcomplaint":"SAMPLE_TEXT", "bp":null, "pulse":null, "temperature":null, "weight":null, "drugs":"SAMPLE_TEXT", "docnote":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "chiefcomplaint":"SAMPLE_TEXT", "bp":null, "pulse":null, "temperature":null, "weight":null, "drugs":"SAMPLE_TEXT", "docnote":"SAMPLE_TEXT", "diagnosis":"SAMPLE_TEXT", "investigation":"SAMPLE_TEXT", "patientname":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_poc_url"))).exitHereIfFailed
             .pause(10)

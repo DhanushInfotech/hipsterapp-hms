@@ -5,15 +5,14 @@
         .module('hospitalManagementApp')
         .controller('PocDialogController', PocDialogController);
 
-    PocDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Poc', 'Patient'];
+    PocDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Poc'];
 
-    function PocDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Poc, Patient) {
+    function PocDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Poc) {
         var vm = this;
 
         vm.poc = entity;
         vm.clear = clear;
         vm.save = save;
-        vm.patients = Patient.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

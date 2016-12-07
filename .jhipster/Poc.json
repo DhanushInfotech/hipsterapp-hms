@@ -1,13 +1,6 @@
 {
     "fluentMethods": true,
-    "relationships": [
-        {
-            "relationshipName": "name",
-            "otherEntityName": "patient",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "name"
-        }
-    ],
+    "relationships": [],
     "fields": [
         {
             "fieldName": "chiefcomplaint",
@@ -35,6 +28,18 @@
         },
         {
             "fieldName": "docnote",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "diagnosis",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "investigation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "patientname",
             "fieldType": "String"
         }
     ],

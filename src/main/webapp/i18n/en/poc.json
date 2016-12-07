@@ -23,7 +23,9 @@
             "weight": "Weight",
             "drugs": "Drugs",
             "docnote": "Docnote",
-            "name": "Name"
+            "diagnosis": "Diagnosis",
+            "investigation": "Investigation",
+            "patientname": "Patientname"
         }
     }
 }
