@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "country"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "state",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "pattern"
+            ],
+            "fieldValidateRulesMinlength": "2",
+            "fieldValidateRulesPattern": "^[a-zA-Z0-9]*$"
+        }
+    ],
+    "changelogDate": "20161207100821",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "state",
+    "pagination": "no"
+}

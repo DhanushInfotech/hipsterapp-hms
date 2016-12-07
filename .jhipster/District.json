@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "state",
+            "otherEntityName": "state",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "state"
+        },
+        {
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "country"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "district",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161207101401",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "district",
+    "pagination": "no"
+}
