@@ -5,9 +5,9 @@
         .module('hospitalManagementApp')
         .controller('PocDetailController', PocDetailController);
 
-    PocDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Poc', 'Patient'];
+    PocDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Poc'];
 
-    function PocDetailController($scope, $rootScope, $stateParams, previousState, entity, Poc, Patient) {
+    function PocDetailController($scope, $rootScope, $stateParams, previousState, entity, Poc) {
         var vm = this;
 
         vm.poc = entity;
