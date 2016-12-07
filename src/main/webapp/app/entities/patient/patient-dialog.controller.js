@@ -5,14 +5,17 @@
         .module('hospitalManagementApp')
         .controller('PatientDialogController', PatientDialogController);
 
-    PatientDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Patient'];
+    PatientDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Patient', 'District', 'State', 'Country'];
 
-    function PatientDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Patient) {
+    function PatientDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Patient, District, State, Country) {
         var vm = this;
 
         vm.patient = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.districts = District.query();
+        vm.states = State.query();
+        vm.countries = Country.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

@@ -41,14 +41,22 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="city" type="varchar(255)">
+            <column name="address" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             
-            <column name="state" type="varchar(255)">
+            <column name="district_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-            
+
+            <column name="state_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="country_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
         

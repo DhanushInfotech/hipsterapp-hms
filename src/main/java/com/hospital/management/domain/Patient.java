@@ -36,11 +36,17 @@ public class Patient implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "city")
-    private String city;
+    @Column(name = "address")
+    private String address;
 
-    @Column(name = "state")
-    private String state;
+    @ManyToOne
+    private District district;
+
+    @ManyToOne
+    private State state;
+
+    @ManyToOne
+    private Country country;
 
     public Long getId() {
         return id;
@@ -115,30 +121,56 @@ public class Patient implements Serializable {
         this.email = email;
     }
 
-    public String getCity() {
-        return city;
+    public String getAddress() {
+        return address;
     }
 
-    public Patient city(String city) {
-        this.city = city;
+    public Patient address(String address) {
+        this.address = address;
         return this;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getState() {
+    public District getDistrict() {
+        return district;
+    }
+
+    public Patient district(District district) {
+        this.district = district;
+        return this;
+    }
+
+    public void setDistrict(District district) {
+        this.district = district;
+    }
+
+    public State getState() {
         return state;
     }
 
-    public Patient state(String state) {
+    public Patient state(State state) {
         this.state = state;
         return this;
     }
 
-    public void setState(String state) {
+    public void setState(State state) {
         this.state = state;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public Patient country(Country country) {
+        this.country = country;
+        return this;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
     }
 
     @Override
@@ -170,8 +202,7 @@ public class Patient implements Serializable {
             ", gender='" + gender + "'" +
             ", phonenumber='" + phonenumber + "'" +
             ", email='" + email + "'" +
-            ", city='" + city + "'" +
-            ", state='" + state + "'" +
+            ", address='" + address + "'" +
             '}';
     }
 }

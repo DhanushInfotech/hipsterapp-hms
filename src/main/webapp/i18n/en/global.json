@@ -11,6 +11,10 @@
                 "doctor": "Doctor",
                 "patient": "Patient",
                 "poc": "Poc",
+                "appointment": "Appointment",
+                "country": "Country",
+                "state": "State",
+                "district": "District",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -123,5 +127,5 @@
         "emailexists": "E-mail is already in use!",
         "idexists": "A new {{ entityName }} cannot already have an ID"
     },
-    "footer": "This is your footer"
+    "footer": "Dhanush Infotech Pvt Ltd"
 }

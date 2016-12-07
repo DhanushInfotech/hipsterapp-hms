@@ -53,11 +53,8 @@ public class PatientResourceIntTest {
     private static final String DEFAULT_EMAIL = "AAAAAAAAAA";
     private static final String UPDATED_EMAIL = "BBBBBBBBBB";
 
-    private static final String DEFAULT_CITY = "AAAAAAAAAA";
-    private static final String UPDATED_CITY = "BBBBBBBBBB";
-
-    private static final String DEFAULT_STATE = "AAAAAAAAAA";
-    private static final String UPDATED_STATE = "BBBBBBBBBB";
+    private static final String DEFAULT_ADDRESS = "AAAAAAAAAA";
+    private static final String UPDATED_ADDRESS = "BBBBBBBBBB";
 
     @Inject
     private PatientRepository patientRepository;
@@ -101,8 +98,7 @@ public class PatientResourceIntTest {
                 .gender(DEFAULT_GENDER)
                 .phonenumber(DEFAULT_PHONENUMBER)
                 .email(DEFAULT_EMAIL)
-                .city(DEFAULT_CITY)
-                .state(DEFAULT_STATE);
+                .address(DEFAULT_ADDRESS);
         return patient;
     }
 
@@ -132,8 +128,7 @@ public class PatientResourceIntTest {
         assertThat(testPatient.getGender()).isEqualTo(DEFAULT_GENDER);
         assertThat(testPatient.getPhonenumber()).isEqualTo(DEFAULT_PHONENUMBER);
         assertThat(testPatient.getEmail()).isEqualTo(DEFAULT_EMAIL);
-        assertThat(testPatient.getCity()).isEqualTo(DEFAULT_CITY);
-        assertThat(testPatient.getState()).isEqualTo(DEFAULT_STATE);
+        assertThat(testPatient.getAddress()).isEqualTo(DEFAULT_ADDRESS);
     }
 
     @Test
@@ -152,8 +147,7 @@ public class PatientResourceIntTest {
                 .andExpect(jsonPath("$.[*].gender").value(hasItem(DEFAULT_GENDER.toString())))
                 .andExpect(jsonPath("$.[*].phonenumber").value(hasItem(DEFAULT_PHONENUMBER.intValue())))
                 .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
-                .andExpect(jsonPath("$.[*].city").value(hasItem(DEFAULT_CITY.toString())))
-                .andExpect(jsonPath("$.[*].state").value(hasItem(DEFAULT_STATE.toString())));
+                .andExpect(jsonPath("$.[*].address").value(hasItem(DEFAULT_ADDRESS.toString())));
     }
 
     @Test
@@ -172,8 +166,7 @@ public class PatientResourceIntTest {
             .andExpect(jsonPath("$.gender").value(DEFAULT_GENDER.toString()))
             .andExpect(jsonPath("$.phonenumber").value(DEFAULT_PHONENUMBER.intValue()))
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()))
-            .andExpect(jsonPath("$.city").value(DEFAULT_CITY.toString()))
-            .andExpect(jsonPath("$.state").value(DEFAULT_STATE.toString()));
+            .andExpect(jsonPath("$.address").value(DEFAULT_ADDRESS.toString()));
     }
 
     @Test
@@ -200,8 +193,7 @@ public class PatientResourceIntTest {
                 .gender(UPDATED_GENDER)
                 .phonenumber(UPDATED_PHONENUMBER)
                 .email(UPDATED_EMAIL)
-                .city(UPDATED_CITY)
-                .state(UPDATED_STATE);
+                .address(UPDATED_ADDRESS);
 
         restPatientMockMvc.perform(put("/api/patients")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -217,8 +209,7 @@ public class PatientResourceIntTest {
         assertThat(testPatient.getGender()).isEqualTo(UPDATED_GENDER);
         assertThat(testPatient.getPhonenumber()).isEqualTo(UPDATED_PHONENUMBER);
         assertThat(testPatient.getEmail()).isEqualTo(UPDATED_EMAIL);
-        assertThat(testPatient.getCity()).isEqualTo(UPDATED_CITY);
-        assertThat(testPatient.getState()).isEqualTo(UPDATED_STATE);
+        assertThat(testPatient.getAddress()).isEqualTo(UPDATED_ADDRESS);
     }
 
     @Test

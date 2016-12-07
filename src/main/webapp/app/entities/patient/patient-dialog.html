@@ -44,18 +44,30 @@
                      />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="hospitalManagementApp.patient.city" for="field_city">City</label>
-            <input type="text" class="form-control" name="city" id="field_city"
-                    ng-model="vm.patient.city"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="hospitalManagementApp.patient.state" for="field_state">State</label>
-            <input type="text" class="form-control" name="state" id="field_state"
-                    ng-model="vm.patient.state"
+            <label class="control-label" data-translate="hospitalManagementApp.patient.address" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                    ng-model="vm.patient.address"
                      />
         </div>
 
+        <div class="form-group">
+            <label data-translate="hospitalManagementApp.patient.district" for="field_district">District</label>
+            <select class="form-control" id="field_district" name="district" ng-model="vm.patient.district" ng-options="district as district.district for district in vm.districts track by district.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="hospitalManagementApp.patient.state" for="field_state">State</label>
+            <select class="form-control" id="field_state" name="state" ng-model="vm.patient.state" ng-options="state as state.state for state in vm.states track by state.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="hospitalManagementApp.patient.country" for="field_country">Country</label>
+            <select class="form-control" id="field_country" name="country" ng-model="vm.patient.country" ng-options="country as country.country for country in vm.countries track by country.id">
+                <option value=""></option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

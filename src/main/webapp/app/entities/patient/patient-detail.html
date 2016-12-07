@@ -24,13 +24,21 @@
         <dd>
             <span>{{vm.patient.email}}</span>
         </dd>
-        <dt><span data-translate="hospitalManagementApp.patient.city">City</span></dt>
+        <dt><span data-translate="hospitalManagementApp.patient.address">Address</span></dt>
         <dd>
-            <span>{{vm.patient.city}}</span>
+            <span>{{vm.patient.address}}</span>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.patient.district">District</span></dt>
+        <dd>
+            <a ui-sref="district-detail({id:vm.patient.district.id})">{{vm.patient.district.district}}</a>
         </dd>
         <dt><span data-translate="hospitalManagementApp.patient.state">State</span></dt>
         <dd>
-            <span>{{vm.patient.state}}</span>
+            <a ui-sref="state-detail({id:vm.patient.state.id})">{{vm.patient.state.state}}</a>
+        </dd>
+        <dt><span data-translate="hospitalManagementApp.patient.country">Country</span></dt>
+        <dd>
+            <a ui-sref="country-detail({id:vm.patient.country.id})">{{vm.patient.country.country}}</a>
         </dd>
     </dl>
 

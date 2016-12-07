@@ -5,9 +5,9 @@
         .module('hospitalManagementApp')
         .controller('PatientDetailController', PatientDetailController);
 
-    PatientDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Patient'];
+    PatientDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Patient', 'District', 'State', 'Country'];
 
-    function PatientDetailController($scope, $rootScope, $stateParams, previousState, entity, Patient) {
+    function PatientDetailController($scope, $rootScope, $stateParams, previousState, entity, Patient, District, State, Country) {
         var vm = this;
 
         vm.patient = entity;

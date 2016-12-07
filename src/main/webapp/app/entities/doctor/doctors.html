@@ -26,7 +26,6 @@
                     <th><span data-translate="hospitalManagementApp.doctor.phonenumber">Phonenumber</span></th>
                     <th><span data-translate="hospitalManagementApp.doctor.email">Email</span></th>
                     <th><span data-translate="hospitalManagementApp.doctor.gender">Gender</span></th>
-                    <th><span data-translate="hospitalManagementApp.doctor.Organization">Organization</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -40,9 +39,6 @@
                     <td>{{doctor.phonenumber}}</td>
                     <td>{{doctor.email}}</td>
                     <td>{{doctor.gender}}</td>
-                    <td>
-                        <a ui-sref="organization-detail({id:doctor.organization.id})">{{doctor.organization.name}}</a>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

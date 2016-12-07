@@ -21,8 +21,10 @@
             "gender": "Gender",
             "phonenumber": "Phonenumber",
             "email": "Email",
-            "city": "City",
-            "state": "State"
+            "address": "Address",
+            "district": "District",
+            "state": "State",
+            "country": "Country"
         }
     }
 }

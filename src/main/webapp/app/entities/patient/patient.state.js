@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/patient',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: ['ROLE_HELPDESK','ROLE_ADMIN'],
                 pageTitle: 'hospitalManagementApp.patient.home.title'
             },
             views: {
@@ -35,7 +35,7 @@
             parent: 'entity',
             url: '/patient/{id}',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: ['ROLE_HELPDESK','ROLE_ADMIN'],
                 pageTitle: 'hospitalManagementApp.patient.detail.title'
             },
             views: {
@@ -67,7 +67,7 @@
             parent: 'patient-detail',
             url: '/detail/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_HELPDESK','ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -92,7 +92,7 @@
             parent: 'patient',
             url: '/new',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_HELPDESK','ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -109,8 +109,7 @@
                                 gender: null,
                                 phonenumber: null,
                                 email: null,
-                                city: null,
-                                state: null,
+                                address: null,
                                 id: null
                             };
                         }
@@ -126,7 +125,7 @@
             parent: 'patient',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_HELPDESK','ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -151,7 +150,7 @@
             parent: 'patient',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_HELPDESK','ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

@@ -24,8 +24,10 @@
                     <th><span data-translate="hospitalManagementApp.patient.gender">Gender</span></th>
                     <th><span data-translate="hospitalManagementApp.patient.phonenumber">Phonenumber</span></th>
                     <th><span data-translate="hospitalManagementApp.patient.email">Email</span></th>
-                    <th><span data-translate="hospitalManagementApp.patient.city">City</span></th>
+                    <th><span data-translate="hospitalManagementApp.patient.address">Address</span></th>
+                    <th><span data-translate="hospitalManagementApp.patient.district">District</span></th>
                     <th><span data-translate="hospitalManagementApp.patient.state">State</span></th>
+                    <th><span data-translate="hospitalManagementApp.patient.country">Country</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -37,8 +39,16 @@
                     <td>{{patient.gender}}</td>
                     <td>{{patient.phonenumber}}</td>
                     <td>{{patient.email}}</td>
-                    <td>{{patient.city}}</td>
-                    <td>{{patient.state}}</td>
+                    <td>{{patient.address}}</td>
+                    <td>
+                        <a ui-sref="district-detail({id:patient.district.id})">{{patient.district.district}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="state-detail({id:patient.state.id})">{{patient.state.state}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="country-detail({id:patient.country.id})">{{patient.country.country}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

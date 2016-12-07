@@ -22,8 +22,7 @@
             "specialization": "Specialization",
             "phonenumber": "Phonenumber",
             "email": "Email",
-            "gender": "Gender",
-            "Organization": "Organization"
+            "gender": "Gender"
         }
     }
 }
