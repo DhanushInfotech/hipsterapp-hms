@@ -1,0 +1,64 @@
+<div>
+    <h2 data-translate="hospitalManagementApp.district.home.title">Districts</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="district.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="hospitalManagementApp.district.home.createLabel">
+                        Create new District
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="hospitalManagementApp.district.district">District</span></th>
+                    <th><span data-translate="hospitalManagementApp.district.state">State</span></th>
+                    <th><span data-translate="hospitalManagementApp.district.country">Country</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="district in vm.districts track by district.id">
+                    <td><a ui-sref="district-detail({id:district.id})">{{district.id}}</a></td>
+                    <td>{{district.district}}</td>
+                    <td>
+                        <a ui-sref="state-detail({id:district.state.id})">{{district.state.state}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="country-detail({id:district.country.id})">{{district.country.country}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="district-detail({id:district.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="district.edit({id:district.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="district.delete({id:district.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

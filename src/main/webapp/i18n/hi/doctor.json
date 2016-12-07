@@ -1,0 +1,28 @@
+{
+    "hospitalManagementApp": {
+        "doctor" : {
+            "home": {
+                "title": "Doctors",
+                "createLabel": "नया Doctor बनाएँ",
+                "createOrEditLabel": "Doctor बनाएँ या संपादित करें",
+                "search": "Doctor खोजें"
+            },
+            "created": "एक नया Doctor [identifier: {{ param }}] तैयार है",
+            "updated": "एक Doctor [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Doctor [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Doctor [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Doctor"
+            },
+            "name": "Name",
+            "age": "Age",
+            "qualification": "Qualification",
+            "specialization": "Specialization",
+            "phonenumber": "Phonenumber",
+            "email": "Email",
+            "gender": "Gender"
+        }
+    }
+}
