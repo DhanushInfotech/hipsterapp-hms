@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="Poornima.k (generated)" id="1481101025638-1">
+      <createTable tableName="organization">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="organizationPK"/>
+         </column>
+         <column name="city" type="VARCHAR(255)"/>
+         <column name="name" type="VARCHAR(255)"/>
+         <column name="state" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481101025638-2">
+      <addColumn tableName="poc">
+         <column name="patientname" type="varchar(255)"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481101025638-3">
+      <dropForeignKeyConstraint baseTableName="poc" constraintName="fk_poc_name_id"/>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481101025638-4">
+      <dropColumn columnName="name_id" tableName="poc"/>
+   </changeSet>
+</databaseChangeLog>

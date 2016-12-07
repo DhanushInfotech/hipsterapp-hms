@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="Poornima.k (generated)" id="1481106520936-1">
+      <addColumn tableName="patient">
+         <column name="country_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481106520936-2">
+      <addColumn tableName="patient">
+         <column name="district_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481106520936-3">
+      <addColumn tableName="patient">
+         <column name="state_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481106520936-4">
+      <addForeignKeyConstraint baseColumnNames="district_id"
+                               baseTableName="patient"
+                               constraintName="FK_2k2n0r5v9cvkmuocexh8glhlh"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="district"/>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481106520936-5">
+      <addForeignKeyConstraint baseColumnNames="country_id"
+                               baseTableName="patient"
+                               constraintName="FK_56iph9y85yneyr2jpxovu13dm"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="country"/>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481106520936-6">
+      <addForeignKeyConstraint baseColumnNames="state_id"
+                               baseTableName="patient"
+                               constraintName="FK_w66b43my4njso6db3ydytbaj"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="state"/>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481106520936-7">
+      <dropColumn columnName="city" tableName="patient"/>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481106520936-8">
+      <dropColumn columnName="state" tableName="patient"/>
+   </changeSet>
+</databaseChangeLog>

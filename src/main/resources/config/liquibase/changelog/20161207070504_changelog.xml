@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="Poornima.k (generated)" id="1481094309685-1">
+      <addColumn tableName="appointment">
+         <column name="doctor_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481094309685-2">
+      <addColumn tableName="appointment">
+         <column name="patient_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481094309685-3">
+      <addForeignKeyConstraint baseColumnNames="doctor_id"
+                               baseTableName="appointment"
+                               constraintName="FK_lny6pe66s89tashny0qvi49dw"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481094309685-4">
+      <addForeignKeyConstraint baseColumnNames="patient_id"
+                               baseTableName="appointment"
+                               constraintName="FK_reredi3x00py8huq44bik8bkv"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="patient"/>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481094309685-5">
+      <dropForeignKeyConstraint baseTableName="appointment" constraintName="fk_appointment_name_id"/>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481094309685-6">
+      <dropColumn columnName="name_id" tableName="appointment"/>
+   </changeSet>
+   <changeSet author="Poornima.k (generated)" id="1481094309685-7">
+      <dropColumn columnName="patientname" tableName="appointment"/>
+   </changeSet>
+</databaseChangeLog>
