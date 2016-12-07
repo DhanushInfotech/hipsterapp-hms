@@ -59,5 +59,21 @@
         timeToLiveSeconds="3600">
     </cache>
 
+    <cache name="com.hospital.management.domain.Appointment"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.hospital.management.domain.Country"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.hospital.management.domain.State"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.hospital.management.domain.District"
+        timeToLiveSeconds="3600">
+    </cache>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </ehcache>

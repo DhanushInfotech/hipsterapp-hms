@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.hospital.management</groupId>
-    <artifactId>hospital-management</artifactId>
+    <artifactId>hospitalmanagement</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Hospital Management</name>

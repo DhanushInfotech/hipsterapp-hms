@@ -1,6 +1,25 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "district",
+            "otherEntityName": "district",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "district"
+        },
+        {
+            "relationshipName": "state",
+            "otherEntityName": "state",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "state"
+        },
+        {
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "country"
+        }
+    ],
     "fields": [
         {
             "fieldName": "name",
@@ -23,11 +42,7 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "city",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "state",
+            "fieldName": "address",
             "fieldType": "String"
         }
     ],
