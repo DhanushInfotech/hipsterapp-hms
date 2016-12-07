@@ -2,9 +2,11 @@ package com.hospital.management.web.rest;
 
 import com.hospital.management.config.Constants;
 import com.codahale.metrics.annotation.Timed;
+import com.hospital.management.domain.Doctor;
 import com.hospital.management.domain.User;
 import com.hospital.management.repository.UserRepository;
 import com.hospital.management.security.AuthoritiesConstants;
+import com.hospital.management.service.DoctorService;
 import com.hospital.management.service.MailService;
 import com.hospital.management.service.UserService;
 import com.hospital.management.web.rest.vm.ManagedUserVM;
@@ -59,6 +61,10 @@ public class UserResource {
 
     @Inject
     private UserRepository userRepository;
+    
+  
+    @Inject
+    private DoctorService doctorService;
 
     @Inject
     private MailService mailService;
@@ -95,7 +101,17 @@ public class UserResource {
                 .headers(HeaderUtil.createFailureAlert("userManagement", "emailexists", "Email already in use"))
                 .body(null);
         } else {
+        	log.info("***** user created*******"+managedUserVM);
             User newUser = userService.createUser(managedUserVM);
+            log.info("########authorities:#######"+managedUserVM.getAuthorities());
+            Iterator<String> it = managedUserVM.getAuthorities().iterator();
+            while(it.hasNext()){
+            	if(it.next().equalsIgnoreCase("ROLE_DOCTOR")){
+            		Doctor result = doctorService.save(new Doctor(managedUserVM.getFirstName(), 0, "", "", 0L, "", ""));
+            		
+            	}
+            }
+            
             String baseUrl = request.getScheme() + // "http"
             "://" +                                // "://"
             request.getServerName() +              // "myhost"
@@ -174,6 +190,9 @@ public class UserResource {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+   
+    
+    
     /**
      * DELETE /users/:login : delete the "login" User.
      *

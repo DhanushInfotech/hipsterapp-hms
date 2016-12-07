@@ -6,7 +6,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
-import com.hospital.management.*;
+
 /**
  * A Doctor.
  */
@@ -42,10 +42,23 @@ public class Doctor implements Serializable {
     @Column(name = "gender")
     private String gender;
 
-    @ManyToOne
-    private Organization organization;
+    public Doctor(){
+    	
+    }
+    public Doctor(String name, Integer age, String qualification, String specialization, Long phonenumber,
+			String email, String gender) {
+		super();
+		
+		this.name = name;
+		this.age = age;
+		this.qualification = qualification;
+		this.specialization = specialization;
+		this.phonenumber = phonenumber;
+		this.email = email;
+		this.gender = gender;
+	}
 
-    public Long getId() {
+	public Long getId() {
         return id;
     }
 
@@ -142,19 +155,6 @@ public class Doctor implements Serializable {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public Organization getOrganization() {
-        return organization;
-    }
-
-    public Doctor organization(Organization organization) {
-        this.organization = organization;
-        return this;
-    }
-
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
     }
 
     @Override

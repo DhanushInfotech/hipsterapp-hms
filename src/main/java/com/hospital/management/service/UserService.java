@@ -202,6 +202,8 @@ public class UserService {
         user.getAuthorities().size(); // eagerly load the association
         return user;
     }
+    
+   
 
     @Transactional(readOnly = true)
     public User getUserWithAuthorities() {
