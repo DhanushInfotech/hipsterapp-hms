@@ -48,7 +48,7 @@ spring:
         port: 587
         username: rakesh.b@dhanushinfotech.net
         password: R135b135#
-        protocol: smtp
+        protocol: smtp  
         tls: true
         properties.mail.smtp:
             auth: true
