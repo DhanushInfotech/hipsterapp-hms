@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/appointment?page&sort&search',
             data: {
-                authorities: ['ROLE_HELPDESK','ROLE_DOCTOR'],
+                authorities: ['ROLE_HELPDESK','ROLE_DOCTOR','ROLE_ADMIN'],
                 pageTitle: 'hospitalManagementApp.appointment.home.title'
             },
             views: {
@@ -55,7 +55,7 @@
             parent: 'entity',
             url: '/appointment/{id}',
             data: {
-                authorities: ['ROLE_HELPDESK','ROLE_DOCTOR'],
+                authorities: ['ROLE_HELPDESK','ROLE_DOCTOR','ROLE_ADMIN'],
                 pageTitle: 'hospitalManagementApp.appointment.detail.title'
             },
             views: {
@@ -87,7 +87,7 @@
             parent: 'appointment-detail',
             url: '/detail/edit',
             data: {
-                authorities: ['ROLE_HELPDESK','ROLE_DOCTOR']
+                authorities: ['ROLE_HELPDESK','ROLE_DOCTOR','ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -112,7 +112,7 @@
             parent: 'appointment',
             url: '/new',
             data: {
-                authorities: ['ROLE_HELPDESK','ROLE_DOCTOR']
+                authorities: ['ROLE_HELPDESK','ROLE_DOCTOR','ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -140,7 +140,7 @@
             parent: 'appointment',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_HELPDESK','ROLE_DOCTOR']
+                authorities: ['ROLE_HELPDESK','ROLE_DOCTOR','ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -165,7 +165,7 @@
             parent: 'appointment',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_HELPDESK','ROLE_DOCTOR']
+                authorities: ['ROLE_HELPDESK','ROLE_DOCTOR','ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

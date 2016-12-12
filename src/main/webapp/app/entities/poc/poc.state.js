@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/poc?page&sort&search',
             data: {
-                authorities: ['ROLE_DOCTOR','ROLE_HELPDESK'],
+                authorities: ['ROLE_DOCTOR','ROLE_HELPDESK','ROLE_ADMIN'],
                 pageTitle: 'hospitalManagementApp.poc.home.title'
             },
             views: {
@@ -55,7 +55,7 @@
             parent: 'entity',
             url: '/poc/{id}',
             data: {
-                authorities: ['ROLE_DOCTOR','ROLE_HELPDESK'],
+                authorities: ['ROLE_DOCTOR','ROLE_HELPDESK','ROLE_ADMIN'],
                 pageTitle: 'hospitalManagementApp.poc.detail.title'
             },
             views: {
@@ -87,7 +87,7 @@
             parent: 'poc-detail',
             url: '/detail/edit',
             data: {
-                authorities: ['ROLE_DOCTOR','ROLE_HELPDESK']
+                authorities: ['ROLE_DOCTOR','ROLE_HELPDESK','ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -112,7 +112,7 @@
             parent: 'poc',
             url: '/new',
             data: {
-                authorities: ['ROLE_DOCTOR','ROLE_HELPDESK']
+                authorities: ['ROLE_DOCTOR','ROLE_HELPDESK','ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -149,7 +149,7 @@
             parent: 'poc',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_DOCTOR','ROLE_HELPDESK']
+                authorities: ['ROLE_DOCTOR','ROLE_HELPDESK','ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -174,7 +174,7 @@
             parent: 'poc',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_DOCTOR','ROLE_HELPDESK']
+                authorities: ['ROLE_DOCTOR','ROLE_HELPDESK','ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
