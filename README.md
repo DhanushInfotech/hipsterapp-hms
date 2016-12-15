@@ -31,7 +31,7 @@ For further instructions on how to develop with JHipster, have a look at [Using 
 
 ## Building for production
 
-To optimize the HospitalManagement application for production, run:
+To optimize the HospitalManagement application for production, run: 
 
     ./mvnw -Pprod clean package
 
